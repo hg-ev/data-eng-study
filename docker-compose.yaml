@@ -27,7 +27,8 @@ services:
     image: apache/superset
     ports:
       - 8080:8088
-    env_file:
-      - ./.env # configure postgres
+    environment:
+      - TALISMAN_ENABLED=False
+      - SUPERSET_SECRET_KEY=$(openssl rand -base64 42)
 volumes:
   database-data: # named volumes can be managed easier using docker-compose
