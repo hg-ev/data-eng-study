@@ -26,3 +26,23 @@ I also added a `dbt/dbt/models/world/city_view.yml` and sql file to create a vie
 
 ### Setup Superset
 Working on it!
+
+Run these following commands:
+```
+docker exec -it data-eng-study-superset-1 superset fab create-admin \
+              --username admin \
+              --firstname Admin \
+              --lastname Admin \
+              --email admin@localhost \
+              --password admin
+```
+
+```
+docker exec -it data-eng-study-superset-1 superset db upgrade &&
+         docker exec -it data-eng-study-superset-1 superset load_examples &&
+         docker exec -it data-eng-study-superset-1 superset init
+```
+
+Then visit http://localhost:8080/ and login using `admin` `admin` credentials.
+
+Connect to the database by going to top right corner, go to settings > database connections. Click postgres and fill out the connection using the details in the `.env`
