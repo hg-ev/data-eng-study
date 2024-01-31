@@ -1,7 +1,5 @@
-# Docker Python Database Study
-
-## An exploration of a modern data stack
-
+# Modern Data Stack
+## An exploration
 ### Big Idea
 This looks into using the following tools:
 - [postgres](https://www.postgresql.org/) as the database
