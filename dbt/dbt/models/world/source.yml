@@ -1,0 +1,7 @@
+sources:
+  - name: public
+    database: rainbow_database
+    tables:
+      - name: city
+      - name: country
+      - name: countrylanguage

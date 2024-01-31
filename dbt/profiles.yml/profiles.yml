@@ -1,0 +1,12 @@
+world:
+  outputs:
+    dev:
+      dbname: rainbow_database
+      host: localhost
+      pass: magical_password
+      port: 5432
+      schema: public
+      threads: 1
+      type: postgres
+      user: unicorn_user
+  target: dev

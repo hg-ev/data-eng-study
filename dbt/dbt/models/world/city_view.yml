@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: city_view
+    description: ""
+    columns:
+      - name: id
+        description: "id"
+      
+      - name: name
+        description: "revision number"
+      
+      - name: countrycode
+        description: ""
+      
+      - name: district
+        description: ""
+      
+      - name: population
+        description: ""

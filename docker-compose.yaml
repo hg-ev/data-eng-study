@@ -1,0 +1,33 @@
+version: '3'
+services:
+  database:
+    build: ./database/.
+    container_name: database
+    env_file:
+      - ./.env # configure postgres
+    volumes:
+      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+      - ./database/volume:/db
+    ports:
+      - 5432:5432
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.7.2
+    container_name: dbt
+    network_mode: "host"
+    env_file:
+      - ./.env # configure postgres
+    volumes:
+      - type: bind
+        source: ./dbt
+        target: /usr/app
+      - type: bind
+        source: ./dbt/profiles.yml
+        target: /root/.dbt/
+  superset:
+    image: apache/superset
+    ports:
+      - 8080:8088
+    env_file:
+      - ./.env # configure postgres
+volumes:
+  database-data: # named volumes can be managed easier using docker-compose
