@@ -2,8 +2,8 @@
 ## An exploration
 
 ```
- @..@
-(----)
+ @..@ 
+(----) ribbit
 ```
 
 ### Big Idea
